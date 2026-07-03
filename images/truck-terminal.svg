@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Placeholder truck terminal scene">
+  <rect width="1600" height="900" fill="#14365f"/>
+  <path d="M0 430h1600v470H0z" fill="#eef4fb"/>
+  <path d="M0 550h1600v350H0z" fill="#243348"/>
+  <rect x="110" y="180" width="1040" height="310" rx="10" fill="#f7fbff"/>
+  <rect x="170" y="240" width="160" height="250" fill="#cfdeef"/>
+  <rect x="370" y="240" width="160" height="250" fill="#cfdeef"/>
+  <rect x="570" y="240" width="160" height="250" fill="#cfdeef"/>
+  <rect x="770" y="240" width="160" height="250" fill="#cfdeef"/>
+  <rect x="970" y="240" width="120" height="250" fill="#cfdeef"/>
+  <path d="M1200 472h220l76 88v96h-296z" fill="#0e5fb8"/>
+  <rect x="930" y="520" width="282" height="136" fill="#f8fbff"/>
+  <path d="M900 656h625" stroke="#082653" stroke-width="36"/>
+  <circle cx="1018" cy="680" r="48" fill="#111827"/>
+  <circle cx="1018" cy="680" r="20" fill="#dbe4ee"/>
+  <circle cx="1390" cy="680" r="48" fill="#111827"/>
+  <circle cx="1390" cy="680" r="20" fill="#dbe4ee"/>
+  <path d="M85 742h1240" stroke="#ffffff" stroke-width="12" stroke-dasharray="100 60" opacity=".5"/>
+</svg>

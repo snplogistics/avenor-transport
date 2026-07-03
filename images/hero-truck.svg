@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Placeholder hero trucking scene">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#123f73"/>
+      <stop offset="1" stop-color="#dbe9f7"/>
+    </linearGradient>
+    <linearGradient id="road" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#33465d"/>
+      <stop offset="1" stop-color="#111b28"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <path d="M0 510h1600v390H0z" fill="url(#road)"/>
+  <path d="M0 500c160-54 300-82 456-70 116 8 198 39 308 37 184-4 286-93 471-78 142 12 241 80 365 76v94H0z" fill="#e7edf4" opacity=".86"/>
+  <path d="M920 360h384c56 0 101 45 101 101v142H786V494c0-74 60-134 134-134z" fill="#f7fbff"/>
+  <path d="M811 439h326v164H811z" fill="#dfe8f2"/>
+  <path d="M1137 439h121l79 84v80h-200z" fill="#0e5fb8"/>
+  <path d="M1168 465h69l46 48h-115z" fill="#cfe5fb"/>
+  <path d="M775 603h671v44H775z" fill="#082653"/>
+  <circle cx="912" cy="655" r="55" fill="#111827"/>
+  <circle cx="912" cy="655" r="24" fill="#dbe4ee"/>
+  <circle cx="1281" cy="655" r="55" fill="#111827"/>
+  <circle cx="1281" cy="655" r="24" fill="#dbe4ee"/>
+  <path d="M210 708h1040" stroke="#ffffff" stroke-width="16" stroke-dasharray="110 70" opacity=".58"/>
+  <path d="M75 308h280" stroke="#ffffff" stroke-width="12" opacity=".42"/>
+  <path d="M1190 244h210" stroke="#ffffff" stroke-width="10" opacity=".36"/>
+</svg>

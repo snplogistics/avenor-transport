@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" role="img" aria-label="Placeholder freight warehouse scene">
+  <defs>
+    <linearGradient id="wall" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f7fbff"/>
+      <stop offset="1" stop-color="#cfdeef"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="760" fill="url(#wall)"/>
+  <rect x="0" y="480" width="1000" height="280" fill="#26364a"/>
+  <rect x="110" y="155" width="780" height="350" rx="8" fill="#ffffff"/>
+  <rect x="148" y="205" width="168" height="300" fill="#dbe4ee"/>
+  <rect x="350" y="205" width="168" height="300" fill="#dbe4ee"/>
+  <rect x="552" y="205" width="168" height="300" fill="#dbe4ee"/>
+  <rect x="754" y="205" width="96" height="300" fill="#dbe4ee"/>
+  <path d="M118 505h782" stroke="#c7952b" stroke-width="12"/>
+  <rect x="120" y="540" width="260" height="92" rx="6" fill="#0e5fb8"/>
+  <rect x="410" y="560" width="150" height="72" rx="6" fill="#c7952b"/>
+  <rect x="590" y="530" width="290" height="102" rx="6" fill="#e8f3ff"/>
+  <circle cx="188" cy="658" r="34" fill="#111827"/>
+  <circle cx="322" cy="658" r="34" fill="#111827"/>
+  <circle cx="728" cy="658" r="34" fill="#111827"/>
+  <circle cx="842" cy="658" r="34" fill="#111827"/>
+  <path d="M70 690h860" stroke="#ffffff" stroke-width="10" stroke-dasharray="62 44" opacity=".55"/>
+</svg>
