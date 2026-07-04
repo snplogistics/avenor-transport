@@ -49,9 +49,15 @@ textarea {
   position: fixed;
   inset: 0 0 auto;
   z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
   padding: 16px clamp(18px, 4vw, 56px);
-  color: var(--white);
-  background: linear-gradient(180deg, rgba(4, 22, 48, 0.72), rgba(4, 22, 48, 0));
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 10px 32px rgba(8, 38, 83, 0.12);
+  backdrop-filter: blur(16px);
   transition: background 180ms ease, box-shadow 180ms ease, padding 180ms ease;
 }
 
@@ -67,10 +73,10 @@ textarea {
 .brand {
   display: inline-flex;
   align-items: center;
-  justify-self: center;
   gap: 12px;
   min-width: max-content;
   font-weight: 800;
+  text-align: left;
   letter-spacing: 0;
 }
 
@@ -85,37 +91,23 @@ textarea {
 
 .brand-text {
   font-size: clamp(1rem, 1.6vw, 1.25rem);
+  line-height: 1.15;
 }
 
 .main-nav {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  display: flex;
   align-items: center;
-  gap: clamp(18px, 3vw, 42px);
+  justify-content: flex-end;
+  gap: clamp(14px, 2vw, 28px);
   font-size: 0.95rem;
   font-weight: 700;
 }
 
-.nav-group {
-  display: flex;
-  align-items: center;
-  gap: clamp(14px, 2vw, 28px);
-}
-
-.nav-left {
-  justify-content: flex-start;
-}
-
-.nav-right {
-  justify-content: flex-end;
-}
-
-.main-nav a,
-.brand {
+.main-nav a {
   position: relative;
 }
 
-.main-nav a:not(.nav-cta):not(.brand)::after {
+.main-nav a:not(.nav-cta)::after {
   position: absolute;
   left: 0;
   bottom: -8px;
@@ -191,10 +183,11 @@ textarea {
 
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: auto;
+  height: 56.25vw;
   display: grid;
-  align-items: center;
-  padding: 132px clamp(18px, 5vw, 72px) 112px;
+  align-items: end;
+  padding: 132px clamp(18px, 5vw, 72px) 28px;
   overflow: hidden;
   color: var(--white);
   background: linear-gradient(135deg, var(--navy), #153f73);
@@ -210,13 +203,12 @@ textarea {
 
 .hero-video {
   object-fit: cover;
-  opacity: 0.6;
+  object-position: center top;
+  opacity: 1;
 }
 
 .hero-overlay {
-  background:
-    linear-gradient(90deg, rgba(4, 22, 48, 0.92), rgba(4, 22, 48, 0.62), rgba(4, 22, 48, 0.24)),
-    linear-gradient(180deg, rgba(4, 22, 48, 0.16), rgba(4, 22, 48, 0.74));
+  background: rgba(0, 0, 0, 0.38);
 }
 
 .hero-content {
@@ -669,8 +661,7 @@ textarea {
 
 @media (max-width: 900px) {
   .site-header {
-    display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 
   .nav-toggle {
@@ -683,7 +674,6 @@ textarea {
     left: 18px;
     right: 18px;
     display: grid;
-    grid-template-columns: 1fr;
     gap: 0;
     max-height: 0;
     overflow: hidden;
@@ -696,23 +686,6 @@ textarea {
 
   .main-nav.is-open {
     max-height: 520px;
-  }
-
-  .nav-group {
-    display: grid;
-    gap: 0;
-  }
-
-  .nav-left,
-  .nav-right {
-    justify-content: stretch;
-  }
-
-  .brand {
-    order: -1;
-    justify-self: stretch;
-    padding: 14px 18px;
-    border-bottom: 1px solid var(--line);
   }
 
   .brand-logo {
@@ -773,6 +746,7 @@ textarea {
   }
 
   .hero {
+    height: auto;
     min-height: auto;
     padding-top: 116px;
   }
