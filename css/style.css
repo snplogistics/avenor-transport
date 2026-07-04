@@ -562,6 +562,20 @@ textarea {
   margin: 0;
   color: var(--muted);
   font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.form-status[data-state="success"] {
+  color: #147a42;
+}
+
+.form-status[data-state="error"] {
+  color: #b42318;
+}
+
+.form-card .btn:disabled {
+  cursor: wait;
+  opacity: 0.68;
 }
 
 .contact-mini {

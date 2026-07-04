@@ -31,32 +31,50 @@ nav?.querySelectorAll("a").forEach((link) => {
 
 forms.forEach((form) => {
   const status = form.querySelector(".form-status");
+  const submitButton = form.querySelector('button[type="submit"]');
 
-  form.addEventListener("submit", (event) => {
-    const action = form.getAttribute("action") || "";
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-    if (action.includes("YOUR_EMAIL_HERE")) {
-      event.preventDefault();
-      status.textContent = "Form email is not connected yet. Replace YOUR_EMAIL_HERE in index.html with your FormSubmit email.";
+    if (!form.checkValidity()) {
+      form.reportValidity();
       return;
     }
 
+    const action = form.getAttribute("action") || "";
+    const endpoint = action.replace("https://formsubmit.co/", "https://formsubmit.co/ajax/");
+
+    if (action.includes("YOUR_EMAIL_HERE")) {
+      status.textContent = "This form is not connected yet.";
+      status.dataset.state = "error";
+      return;
+    }
+
+    submitButton.disabled = true;
     status.textContent = "Sending...";
+    status.dataset.state = "pending";
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      form.reset();
+      status.textContent = "Thanks. Your message has been sent.";
+      status.dataset.state = "success";
+    } catch (error) {
+      status.textContent = "Sorry, the message could not be sent. Please email manager@avenortransport.com directly.";
+      status.dataset.state = "error";
+    } finally {
+      submitButton.disabled = false;
+    }
   });
 });
-
-/*
-  Email setup options:
-
-  FormSubmit:
-  1. Replace both form action values in index.html:
-     https://formsubmit.co/YOUR_EMAIL_HERE -> https://formsubmit.co/your@email.com
-  2. Submit once from the live site and confirm the activation email from FormSubmit.
-
-  EmailJS alternative:
-  1. Add the EmailJS browser SDK script in index.html.
-  2. Replace the normal submit handler above with emailjs.sendForm("SERVICE_ID", "TEMPLATE_ID", form).
-  3. Add your public key with emailjs.init("PUBLIC_KEY").
-
-  Cloudflare Workers or Netlify Forms can also be connected later by changing each form action.
-*/
