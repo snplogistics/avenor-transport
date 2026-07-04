@@ -49,13 +49,9 @@ textarea {
   position: fixed;
   inset: 0 0 auto;
   z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
   padding: 16px clamp(18px, 4vw, 56px);
   color: var(--white);
-  background: linear-gradient(180deg, rgba(4, 22, 48, 0.88), rgba(4, 22, 48, 0.28));
+  background: linear-gradient(180deg, rgba(4, 22, 48, 0.72), rgba(4, 22, 48, 0));
   transition: background 180ms ease, box-shadow 180ms ease, padding 180ms ease;
 }
 
@@ -71,6 +67,7 @@ textarea {
 .brand {
   display: inline-flex;
   align-items: center;
+  justify-self: center;
   gap: 12px;
   min-width: max-content;
   font-weight: 800;
@@ -78,12 +75,12 @@ textarea {
 }
 
 .brand-logo {
-  width: 44px;
-  height: 44px;
+  width: 54px;
+  height: 54px;
   object-fit: contain;
-  border-radius: 6px;
-  background: var(--white);
-  padding: 4px;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
 }
 
 .brand-text {
@@ -91,18 +88,34 @@ textarea {
 }
 
 .main-nav {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  gap: clamp(14px, 2vw, 28px);
+  gap: clamp(18px, 3vw, 42px);
   font-size: 0.95rem;
   font-weight: 700;
 }
 
-.main-nav a {
+.nav-group {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 28px);
+}
+
+.nav-left {
+  justify-content: flex-start;
+}
+
+.nav-right {
+  justify-content: flex-end;
+}
+
+.main-nav a,
+.brand {
   position: relative;
 }
 
-.main-nav a:not(.nav-cta)::after {
+.main-nav a:not(.nav-cta):not(.brand)::after {
   position: absolute;
   left: 0;
   bottom: -8px;
@@ -655,6 +668,11 @@ textarea {
 }
 
 @media (max-width: 900px) {
+  .site-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .nav-toggle {
     display: block;
   }
@@ -665,6 +683,7 @@ textarea {
     left: 18px;
     right: 18px;
     display: grid;
+    grid-template-columns: 1fr;
     gap: 0;
     max-height: 0;
     overflow: hidden;
@@ -677,6 +696,28 @@ textarea {
 
   .main-nav.is-open {
     max-height: 520px;
+  }
+
+  .nav-group {
+    display: grid;
+    gap: 0;
+  }
+
+  .nav-left,
+  .nav-right {
+    justify-content: stretch;
+  }
+
+  .brand {
+    order: -1;
+    justify-self: stretch;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .brand-logo {
+    width: 42px;
+    height: 42px;
   }
 
   .main-nav a {
